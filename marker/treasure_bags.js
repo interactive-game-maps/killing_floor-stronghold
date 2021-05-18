@@ -488,7 +488,7 @@ var treasure_bags = {
             "properties": {
                 "number": 33,
                 "id": "38599284062522328/236AD71A6E93EE324900866FB1375A26431D0241",
-                "description": "<a href=http://images.akamai.steamusercontent.com/ugc/38598015426467509/9FD373B24D57F760DFF1CBF5410F7A99A6007A25/>Through the wall opening and between the foliage on an embankment.</a>"
+                "description": "<a href=https://steamuserimages-a.akamaihd.net/ugc/38598015426467509/9FD373B24D57F760DFF1CBF5410F7A99A6007A25/>Through the wall opening and between the foliage on an embankment.</a>"
             },
             "geometry": {
                 "type": "Point",

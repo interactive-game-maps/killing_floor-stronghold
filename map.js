@@ -84,7 +84,7 @@ var map = L.map('map', {
         },
         onEachFeature: function (feature, layer) {
             // popup with simple image and description
-            layer.bindPopup("<a href='http://images.akamai.steamusercontent.com/ugc/" + feature.properties.id + "/'><img src='http://images.akamai.steamusercontent.com/ugc/" + feature.properties.id + "/' width='500/' /></a>" + feature.properties.description, { maxWidth: 500 });
+            layer.bindPopup("<a href='https://steamuserimages-a.akamaihd.net/ugc/" + feature.properties.id + "/'><img src='https://steamuserimages-a.akamaihd.net/ugc/" + feature.properties.id + "/' width='500/' /></a>" + feature.properties.description, { maxWidth: 500 });
         }
     }).addTo(treasure_bag_cluster);
 
