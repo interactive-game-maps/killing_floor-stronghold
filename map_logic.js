@@ -1,5 +1,5 @@
 { // Helper functions
-    function add_checkbox_for_marker(feature, marker, list, cluster) {
+    function add_checkbox_for_marker(feature, marker, list, list_name, cluster) {
         // Add checkbox for marker
         var list_entry = document.createElement('li');
         var checkbox = document.createElement('input');
@@ -18,11 +18,23 @@
 
         checkbox.addEventListener('change', () => {
             if (checkbox.checked) {
-                map.removeLayer(marker);
+                cluster.removeLayer(marker);
+                // save to localStorage
+                localStorage.setItem(list_name + ":" + feature.properties.id, true);
             } else {
-                marker.addTo(cluster).addTo(map);
+                marker.addTo(cluster);
+                // remove from localStorage
+                localStorage.removeItem(list_name + ":" + feature.properties.id);
             }
         });
+
+        // hide if checked previously
+        if (localStorage.getItem(list_name + ":" + feature.properties.id)) {
+            checkbox.checked = true;
+            return false;
+        }
+
+        return true;
     }
 
 }
@@ -50,7 +62,9 @@
                 })
             });
 
-            add_checkbox_for_marker(feature, marker, treasure_bag_list, treasure_bag_cluster);
+            if (!add_checkbox_for_marker(feature, marker, treasure_bag_list, "treasure_bags", treasure_bag_cluster)) {
+                return null;
+            }
             return marker;
         },
         onEachFeature: function (feature, layer) {
