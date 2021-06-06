@@ -111,6 +111,16 @@ tiled_map.addTo(map);
     });
 
     sidebar.addPanel({
+        id: 'attributions',
+        tab: '<i class="fas fa-info-circle"></i>',
+        title: 'Attributions',
+        position: 'bottom',
+        pane: `
+            <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            `
+    });
+
+    sidebar.addPanel({
         id: 'visit-github',
         tab: '<i class="fab fa-github"></i>',
         position: 'bottom',
@@ -126,6 +136,8 @@ tiled_map.addTo(map);
 
     // make group visible on pane opening
     sidebar.on('content', (event) => {
+        if (event.id == 'attributions') return;
+
         map.addLayer(marker.get(event.id).get('group'));
         history.replaceState({}, "", "index.html?list=" + event.id);
     });

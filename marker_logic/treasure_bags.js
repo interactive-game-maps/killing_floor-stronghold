@@ -16,22 +16,28 @@ var treasure_bags_group = L.markerClusterGroup({
     maxClusterRadius: 40
 });
 
-// Add all markers and attach popups with information
+var treasure_bags_icon = L.Icon.Default.extend({
+    options: {
+        imagePath: './',
+        iconUrl: 'marker/treasure_bags.png',
+        shadowUrl: 'marker/shadow.png'
+    }
+});
+
 L.geoJSON(treasure_bags, {
     pointToLayer: (feature, latlng) => {
-        // custom marker
         return L.marker(latlng, {
-            // Simple symbols and text/numbers on markers: https://github.com/coryasilva/Leaflet.ExtraMarkers
-            icon: L.ExtraMarkers.icon({
-                icon: 'fa-number',
-                number: feature.properties.id,
-                shape: 'square',
-                markerColor: 'cyan'
-            })
+            icon: new treasure_bags_icon,
+            riseOnHover: true
         });
     },
     onEachFeature: (feature, layer) => {
-        onEachFeature(feature, layer, treasure_bags_group, treasure_bags_list, 'treasure_bags', true);
+        onEachFeature(feature, layer, {
+            layer_group: treasure_bags_group,
+            list: treasure_bags_list,
+            list_name: "treasure_bags",
+            create_checkbox: true
+        });
     }
 }).addTo(treasure_bags_group);
 marker.get('treasure_bags').set("group", treasure_bags_group);
