@@ -3,10 +3,11 @@ var treasure_bags_list = document.createElement('ul');
 treasure_bags_list.className = 'collectibles_list';
 
 // Add list to sidebar
+var treasure_bags_group_name = 'Treasure Bags';
 sidebar.addPanel({
     id: 'treasure_bags',
     tab: '💰',
-    title: 'Treasure Bags',
+    title: treasure_bags_group_name,
     pane: '<p></p>' // placeholder to get a proper pane
 });
 document.getElementById('treasure_bags').appendChild(treasure_bags_list);
@@ -40,4 +41,5 @@ L.geoJSON(treasure_bags, {
         });
     }
 }).addTo(treasure_bags_group);
-marker.get('treasure_bags').set("group", treasure_bags_group);
+marker.get('treasure_bags').set('group', treasure_bags_group);
+marker.get('treasure_bags').set('name', treasure_bags_group_name);
