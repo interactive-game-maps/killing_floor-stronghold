@@ -1,5 +1,5 @@
 // Helper functions
-function getPopupMedia(feature, html) {
+function getPopupMedia(feature, list_id, html) {
     const POPUP_WIDTH = 500;
 
     if (feature.properties.image_id) {
@@ -117,7 +117,7 @@ function addPopup(feature, layer, args = {}) {
 
             html.appendChild(title);
 
-            html = getPopupMedia(feature, html);
+            html = getPopupMedia(feature, params.list_id, html);
 
             if (feature.properties.description) {
                 var description = document.createElement('p');
