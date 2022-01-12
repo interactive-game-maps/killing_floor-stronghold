@@ -1,5 +1,7 @@
 // Helper functions
 function getPopupMedia(feature, html) {
+    const POPUP_WIDTH = 500;
+
     if (feature.properties.image_id) {
         var image_link = document.createElement('a');
         image_link.className = 'popup-media';
@@ -97,7 +99,6 @@ function addPopup(feature, layer, args = {}) {
         create_checkbox: false
     };
     var params = { ...defaults, ...args } // right-most object overwrites
-    const POPUP_WIDTH = 500;
 
     // only bind for markers
     if (feature.geometry.type == "Point") {
