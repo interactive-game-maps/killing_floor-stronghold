@@ -176,7 +176,7 @@ function addPopup(feature, layer, args = {}) {
             });
 
             layer.on('popupclose', (event) => {
-                history.replaceState({}, "", `/${website_subdir}`);
+                history.replaceState({}, "", `/${website_subdir}/`);
             });
 
             return html;
