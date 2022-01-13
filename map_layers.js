@@ -19,7 +19,8 @@ var tiled_map = new L.tileLayer('map_tiles/{z}/{x}/{y}.png', {
     minNativeZoom: 2,
     maxNativeZoom: 5,
     attribution: '<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=280577526">Map and images from EnigmaticRunner</a>',
-    noWrap: true
+    noWrap: true,
+    detectRetina: true
 });
 
 var baseMaps = {
