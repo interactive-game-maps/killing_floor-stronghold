@@ -12,6 +12,7 @@ var treasure_bags_icon = L.Icon.Default.extend({
     options: {
         imagePath: './',
         iconUrl: 'marker/treasure_bags.png',
+        iconRetinaUrl: 'marker/treasure_bags.png',
         shadowUrl: 'marker/shadow.png'
     }
 });
