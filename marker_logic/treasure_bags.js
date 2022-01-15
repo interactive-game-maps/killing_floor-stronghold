@@ -8,19 +8,10 @@ var treasure_bags_group = L.markerClusterGroup({
     maxClusterRadius: 40
 });
 
-var treasure_bags_icon = L.Icon.Default.extend({
-    options: {
-        imagePath: './',
-        iconUrl: 'marker/treasure_bags.png',
-        iconRetinaUrl: 'marker/treasure_bags.png',
-        shadowUrl: 'marker/shadow.png'
-    }
-});
-
 L.geoJSON(treasure_bags, {
     pointToLayer: (feature, latlng) => {
         return L.marker(latlng, {
-            icon: new treasure_bags_icon,
+            icon: getCustomIcon('💰'),
             riseOnHover: true
         });
     },
