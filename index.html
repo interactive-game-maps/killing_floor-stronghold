@@ -37,26 +37,28 @@
 	<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"
 		crossorigin=""></script>
 
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="common/style.css" />
 </head>
 
 <body>
 	<div id="map"></div>
 
 	<!-- include map base layers -->
-	<script src="./map_layers.js" type="text/javascript"></script>
+	<script src="map_layers.js" type="text/javascript"></script>
+	<script src="common/layers.js" type="text/javascript"></script>
 
 	<!-- include map utils -->
-	<script src="./map_utils.js" type="text/javascript"></script>
+	<script src="common/utils.js" type="text/javascript"></script>
+	<script src="map_utils.js" type="text/javascript"></script>
 
 	<!-- include markers from file -->
-	<script src="./marker/treasure_bags.js" type="text/javascript"></script>
+	<script src="marker/treasure_bags.js" type="text/javascript"></script>
 
 	<!-- include marker logic -->
-	<script src="./marker_logic/treasure_bags.js" type="text/javascript"></script>
+	<script src="marker_logic/treasure_bags.js" type="text/javascript"></script>
 
 	<!-- include map base layers -->
-	<script src="./map_controls.js" type="text/javascript"></script>
+	<script src="common/controls.js" type="text/javascript"></script>
 </body>
 
 </html>
