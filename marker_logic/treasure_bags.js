@@ -4,9 +4,7 @@ var treasure_bags_create_checkbox = true;
 
 var treasure_bags_list = createSidebarTab(treasure_bags_group_id, treasure_bags_group_name, '💰');
 
-var treasure_bags_group = L.markerClusterGroup({
-    maxClusterRadius: 40
-});
+var treasure_bags_group = L.featureGroup.subGroup(marker_cluster);
 
 L.geoJSON(treasure_bags, {
     pointToLayer: (feature, latlng) => {

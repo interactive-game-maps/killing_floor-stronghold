@@ -1,8 +1,6 @@
 var website = 'https://github.com/interactive-game-maps/killing_floor-stronghold';
 var website_subdir = 'killing_floor-stronghold';
-var attribution = `
-    <div>Icons made by <a href="https://fontawesome.com/" title="Font Awesome">Font Awesome</a> under <a href="https://fontawesome.com/license">CCA4</a>.</div>
-    `;
+var attribution = ``;
 const MAX_ZOOM = 4;
 
 var map = L.map('map', {
