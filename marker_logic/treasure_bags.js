@@ -1,5 +1,5 @@
-function getTreasureBags() {
-    return new InteractiveLayer('treasure_bags', treasure_bags, {
+function addTreasureBags(map) {
+    map.addInteractiveLayer('treasure_bags', treasure_bags, {
         name: "Treasure Bags",
         create_checkbox: true,
         create_feature_popup: true,

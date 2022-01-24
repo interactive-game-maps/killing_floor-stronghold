@@ -12,6 +12,6 @@ interactive_map.addTileLayer('Overview', {
     attribution: 'Map and images from <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=280577526">EnigmaticRunner</a>'
 });
 
-interactive_map.addInteractiveLayer(getTreasureBags());
+addTreasureBags(interactive_map);
 
 interactive_map.finalize();
